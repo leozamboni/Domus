@@ -1,8 +1,8 @@
 {
-  "name": "travel-to",
+  "name": "Domus",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://placee.es",
+  "homepage": "https://leozamboni.github.io",
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
