@@ -14,7 +14,7 @@ import {
   IconSquareLetterS,
   IconSquareLetterW,
 } from "@tabler/icons-react";
-import { RotatingLines } from "react-loader-spinner";
+import { TailSpin } from "react-loader-spinner";
 import { DefaultLoadingManager } from "three";
 import { DomusRuntimeContext } from "../../App";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -52,7 +52,7 @@ export function DomusRuntimeHUD({}: Props) {
   };
 
   DefaultLoadingManager.onLoad = function () {
-    setLoadingStatus("Loading completed!");
+    setLoadingStatus("Loading complete!");
     setLoading(false);
   };
 
@@ -68,7 +68,7 @@ export function DomusRuntimeHUD({}: Props) {
 
   useEffect(() => {
     if (!loading) {
-      setLoadingStatus('Loading completed!')
+      setLoadingStatus("Loading complete!");
     }
   });
 
@@ -108,13 +108,11 @@ export function DomusRuntimeHUD({}: Props) {
           <br />
           <Button id={"button"} pointerEvents="auto" zIndex={loading ? -1 : 1}>
             {loading ? (
-              <RotatingLines
-                strokeColor="black"
+              <TailSpin
+                color="black"
                 visible={true}
                 width="30"
-                strokeWidth="5"
-                animationDuration="0.75"
-                ariaLabel="rotating-lines-loading"
+                ariaLabel="tail-spin-loading"
               />
             ) : (
               "Click to start"

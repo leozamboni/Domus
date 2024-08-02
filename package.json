@@ -1,8 +1,8 @@
 {
-  "name": "Domus",
+  "name": "domus",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://leozamboni.github.io",
+  "homepage": "https://leozamboni.dev/Domus",
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
