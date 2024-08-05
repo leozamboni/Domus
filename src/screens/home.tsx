@@ -9,6 +9,7 @@ import {
   GridItem,
   Heading,
   Image,
+  Link,
   Modal,
   ModalBody,
   ModalContent,
@@ -18,7 +19,7 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import { IconAlertTriangleFilled } from "@tabler/icons-react";
+import { IconAlertTriangleFilled, IconCode } from "@tabler/icons-react";
 import React, { useContext, useState } from "react";
 import { DomusRuntime } from "../components/domus-runtime";
 import { StPeterStourtonModel } from "../components/domus-models/st-peter-stourton-model";
@@ -43,6 +44,16 @@ export function Home() {
     <>
       <Grid h="100vh" templateColumns="repeat(2, 1fr)" gap={1}>
         <GridItem textAlign="center" w="100%">
+          <Box position="absolute" ml="10px" mt="10px" color="green.700">
+            <Link
+              href="https://github.com/leozamboni/Domus"
+              target="_blank"
+              title="Code"
+            >
+              <IconCode />
+            </Link>
+          </Box>
+
           <Box h="230px">
             <Center>
               <Flex fontSize="5vw" mt="30px" color="green.700" translate="yes">
@@ -62,6 +73,7 @@ export function Home() {
               w="60%"
               h="calc(100vh - 340px)"
               overflowY="scroll"
+              bg="#d8d8d8"
             >
               <Box>
                 <Card
@@ -73,7 +85,7 @@ export function Home() {
                   <CardBody>
                     <Image
                       src="st-peters-church-stourto.jpg"
-                      alt="Green double couch with wooden legs"
+                      alt="St Peters Church, Stourto."
                       borderRadius="lg"
                     />
                     <Heading size="sm">St Peter's Church</Heading>
