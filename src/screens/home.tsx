@@ -62,7 +62,7 @@ export function Home() {
               </Flex>
             </Center>
             <Text color="yellow.600" fontSize="xl">
-              Christo Nihil Præponere
+            Crux Sacra sit mihi lux
             </Text>
           </Box>
 

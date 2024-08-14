@@ -101,30 +101,6 @@ export function DomusRuntimeHUD({}: Props) {
             <Text>omus</Text>
           </Center>
           <Text>{loadingStatus}</Text>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Button id={"button"} pointerEvents="auto" zIndex={loading ? -1 : 1}>
-            {loading ? (
-              <TailSpin
-                color="black"
-                visible={true}
-                width="30"
-                ariaLabel="tail-spin-loading"
-              />
-            ) : (
-              "Click to start"
-            )}
-          </Button>
-          {location.pathname !== "/" && (
-            <Center mt="20px">
-              <Link onClick={() => navigate("/")} as="b">
-                <IconArrowLeft style={{ float: "left" }} /> Home
-              </Link>
-            </Center>
-          )}
         </Box>
         <Box
           left={0}
@@ -134,6 +110,31 @@ export function DomusRuntimeHUD({}: Props) {
           bottom="10%"
           w="100%"
         >
+          <Box mb='25px'>
+            <Button
+              id={"button"}
+              pointerEvents="auto"
+              zIndex={loading ? -1 : 1}
+            >
+              {loading ? (
+                <TailSpin
+                  color="black"
+                  visible={true}
+                  width="30"
+                  ariaLabel="tail-spin-loading"
+                />
+              ) : (
+                "Click to start"
+              )}
+            </Button>
+            {location.pathname !== "/" && (
+              <Center mt="10px">
+                <Link onClick={() => navigate("/")} as="b">
+                  <IconArrowLeft style={{ float: "left" }} /> Home
+                </Link>
+              </Center>
+            )}
+          </Box>
           Eyes on
           <IconMouse style={{ margin: "auto" }} />
           <br />
