@@ -11,6 +11,7 @@ import {
   IconSquareArrowUp,
   IconSquareLetterA,
   IconSquareLetterD,
+  IconSquareLetterR,
   IconSquareLetterS,
   IconSquareLetterW,
 } from "@tabler/icons-react";
@@ -110,7 +111,7 @@ export function DomusRuntimeHUD({}: Props) {
           bottom="10%"
           w="100%"
         >
-          <Box mb='25px'>
+          <Box mb="25px">
             <Button
               id={"button"}
               pointerEvents="auto"
@@ -181,6 +182,12 @@ export function DomusRuntimeHUD({}: Props) {
           <br />
           and jump with <Text as="b">Space bar</Text>
           <IconSpace style={{ margin: "auto" }} />
+          <br />
+          <Box w="200px" margin="auto">
+            Reset position on
+            <IconSquareLetterR style={{ display: "inline-block", marginBottom: '-5px', marginLeft: '5px', marginRight: '5px' }} />
+            key
+          </Box>
           <br />
           <Box w="270px" margin="auto">
             <IconPlayerPause style={{ float: "left" }} />

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useKeyboardControls } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { CapsuleCollider, RigidBody, useRapier } from "@react-three/rapier";
@@ -19,20 +19,31 @@ export function Player({ position, speed, rotation }: PlayerProps) {
   const rapier = useRapier();
   const [, get] = useKeyboardControls();
   const { camera } = useThree();
-  camera.rotation.set(0, 9.8, 0);
-  if (rotation) {
-    const { x, y, z } = rotation;
-    camera.rotation.set(x, y, z);
-  }
+
+  const initialCamRot = rotation ? rotation : new Euler(0, 9.8, 0);
+  const { x, y, z } = initialCamRot;
+  camera.rotation.set(x, y, z);
+
+  const roundPosCheck = (currVal, initVal) =>
+    Math.round(currVal) === Math.round(initVal);
 
   useFrame(() => {
-    const { forward, backward, left, right, jump } = get();
-    const velocity = ref.current.linvel();
+    const { forward, backward, left, right, jump, reset } = get();
+    const { y: velocity } = ref.current.linvel();
 
     // update camera
     let p = ref.current.translation();
-
     camera.position.set(p.x, p.y, p.z);
+
+    // reset position
+    if (
+      reset &&
+      (!roundPosCheck(p.x, position.x) || !roundPosCheck(p.z, position.z))
+    ) {
+      camera.rotation.set(x, y, z);
+      ref.current.setTranslation(position);
+      return;
+    }
 
     // movement
     frontVector.set(0, 0, Number(backward) - Number(forward));
@@ -42,7 +53,7 @@ export function Player({ position, speed, rotation }: PlayerProps) {
       .normalize()
       .multiplyScalar(speed)
       .applyEuler(camera.rotation);
-    ref.current.setLinvel({ x: direction.x, y: velocity.y, z: direction.z });
+    ref.current.setLinvel({ x: direction.x, y: velocity, z: direction.z });
 
     // jumping
     const world = rapier.world.raw();

@@ -10,26 +10,27 @@ import { DomusRuntimeContext } from "../../App";
 
 export function DomusRuntimeCore() {
   const { domusModelSettings } = useContext(DomusRuntimeContext);
-  const { model: Model } = domusModelSettings
+  const { model: Model } = domusModelSettings;
 
   return (
     <>
       <DomusRuntimeHUD />
       <KeyboardControls
         map={[
-          { name: "forward", keys: ["ArrowUp", "w", "W"] },
-          { name: "backward", keys: ["ArrowDown", "s", "S"] },
-          { name: "left", keys: ["ArrowLeft", "a", "A"] },
-          { name: "right", keys: ["ArrowRight", "d", "D"] },
+          { name: "forward", keys: ["ArrowUp", "KeyW"] },
+          { name: "backward", keys: ["ArrowDown", "KeyS"] },
+          { name: "left", keys: ["ArrowLeft", "KeyA"] },
+          { name: "right", keys: ["ArrowRight", "KeyD"] },
           { name: "jump", keys: ["Space"] },
           { name: "esc", keys: ["Esc"] },
+          { name: "reset", keys: ["KeyR"] },
         ]}
       >
         <Canvas>
           <Physics gravity={[0, -20, 0]}>
             <Player
               speed={3}
-              position={new Vector3(2.1, 5, 5)}
+              position={new Vector3(2.1, 3, 5)}
               rotation={new Euler(0.2, 0)}
             />
             <RigidBody type="fixed" colliders="hull">
