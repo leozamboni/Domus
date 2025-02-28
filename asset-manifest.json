@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Domus/static/css/main.d8f4837b.css",
-    "main.js": "/Domus/static/js/main.a7e44dce.js",
+    "main.js": "/Domus/static/js/main.d1e20046.js",
     "static/media/rosecaps.ttf": "/Domus/static/media/rosecaps.928466182ecfc978a8c6.ttf",
     "static/media/LTC Deepdene W00 Regular.ttf": "/Domus/static/media/LTC Deepdene W00 Regular.d4fd8b1d19b7f0edc0d9.ttf",
     "index.html": "/Domus/index.html"
   },
   "entrypoints": [
     "static/css/main.d8f4837b.css",
-    "static/js/main.a7e44dce.js"
+    "static/js/main.d1e20046.js"
   ]
 }
