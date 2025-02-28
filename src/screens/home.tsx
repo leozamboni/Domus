@@ -19,7 +19,7 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import { IconAlertTriangleFilled, IconCode } from "@tabler/icons-react";
+import { IconAlertTriangleFilled, IconCode, IconHome } from "@tabler/icons-react";
 import React, { useContext, useState } from "react";
 import { DomusRuntime } from "../components/domus-runtime";
 import { StPeterStourtonModel } from "../components/domus-models/st-peter-stourton-model";
@@ -51,6 +51,15 @@ export function Home() {
               title="Code"
             >
               <IconCode />
+            </Link>
+          </Box>
+          <Box position="absolute" ml="10px" mt="40px" color="green.700">
+            <Link
+              href="https://web-traditio.vercel.app/"
+              target="_blank"
+              title="Home"
+            >
+              <IconHome />
             </Link>
           </Box>
 
